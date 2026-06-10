@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Tikeshwari</title>
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f4f7fc;
+}
+
+header{
+    background:#003b95;
+    color:white;
+    padding:15px;
+}
+
+header h1{
+    text-align:center;
+}
+
+nav{
+    background:#0056d6;
+    padding:12px;
+    text-align:center;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:15px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:yellow;
+}
+
+.hero{
+    background:url('Bank image.JPG') center/cover;
+    height:300px;
+    display:flex;
+    justify-content:center;
+    align-items:flex-end;
+    color:white;
+    text-shadow:2px 2px 5px black;
+    padding-bottom: 30px;
+    padding-right: 20px;
+}
+
+.hero h2{
+    font-size:30px;
+    margin: 0;
+}
+
+.container{
+    width:90%;
+    margin:auto;
+    padding:30px 0;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+    text-align:center;
+}
+
+.card h3{
+    color:#003b95;
+    margin-bottom:10px;
+}
+
+button{
+    background:#0056d6;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    margin-top:10px;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#003b95;
+}
+
+form{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+form input, form textarea, form select{
+    width:100%;
+    padding:10px;
+    margin:10px 0;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+footer{
+    background:#003b95;
+    color:white;
+    text-align:center;
+    padding:15px;
+    margin-top:30px;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:20px;
+    color:#003b95;
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>SecureBank</h1>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="Account.html">Accounts</a>
+    <a href="Loan.html">Loans</a>
+    <a href="Services.html">Services</a>
+    <a href="Support.html">Support</a>
+    <a href="Contact.html">Contact Us</a>
+</nav>
+
+<section class="hero" id="home">
+    <h2>Welcome to SecureBank</h2>
+</section>
+
+<div class="container" id="accounts">
+    <h2 class="section-title">Account Types</h2>
+
+    <div class="cards">
+        <div class="card">
+            <h3>Savings Account</h3>
+            <p>Easy banking with ATM and online services.</p>
+            <button onclick="showMessage('Savings Account Selected')">Open</button>
+        </div>
+
+        <div class="card">
+            <h3>Current Account</h3>
+            <p>Best for business and daily transactions.</p>
+            <button onclick="showMessage('Current Account Selected')">Open</button>
+        </div>
+
+        <div class="card">
+            <h3>Fixed Deposit</h3>
+            <p>High interest return on deposits.</p>
+            <button onclick="showMessage('Fixed Deposit Selected')">Open</button>
+        </div>
+    </div>
+</div>
+
+<div class="container" id="loans">
+    <h2 class="section-title">Loan Details</h2>
+
+    <div class="cards">
+        <div class="card">
+            <h3>Home Loan</h3>
+            <p>Interest Rate: 8%</p>
+            <button>Apply Now</button>
+        </div>
+
+        <div class="card">
+            <h3>Car Loan</h3>
+            <p>Interest Rate: 9%</p>
+            <button>Apply Now</button>
+        </div>
+
+        <div class="card">
+            <h3>Education Loan</h3>
+            <p>Interest Rate: 6%</p>
+            <button>Apply Now</button>
+        </div>
+    </div>
+</div>
+
+<div class="container" id="services">
+    <h2 class="section-title">Bank Services</h2>
+
+    <div class="cards">
+        <div class="card">
+            <h3>Internet Banking</h3>
+            <p>24x7 Online Banking Service</p>
+        </div>
+
+        <div class="card">
+            <h3>ATM Service</h3>
+            <p>Cash withdrawal anytime</p>
+        </div>
+
+        <div class="card">
+            <h3>Mobile Banking</h3>
+            <p>Easy banking from mobile app</p>
+        </div>
+    </div>
+</div>
+
+<div class="container" id="support">
+    <h2 class="section-title">Customer Support</h2>
+
+    <div class="cards">
+        <div class="card">
+            <h3>Call Support</h3>
+            <p>1800-123-4567</p>
+        </div>
+
+        <div class="card">
+            <h3>Email Support</h3>
+            <p>support@securebank.com</p>
+        </div>
+
+        <div class="card">
+            <h3>Live Chat</h3>
+            <p>24x7 Chat Available</p>
+        </div>
+    </div>
+</div>
+
+<div class="container" id="contact">
+    <h2 class="section-title">Contact Us</h2>
+
+    <form onsubmit="return submitForm()">
+        <input type="text" id="name" placeholder="Enter Your Name" required>
+        <input type="email" id="email" placeholder="Enter Your Email" required>
+        <input type="text" id="phone" placeholder="Enter Mobile Number" required>
+
+        <select>
+            <option>Select Service</option>
+            <option>Open Account</option>
+            <option>Loan Inquiry</option>
+            <option>Customer Support</option>
+        </select>
+
+        <textarea rows="5" placeholder="Enter Message"></textarea>
+
+        <button type="submit">Send Message</button>
+    </form>
+</div>
+
+<footer>
+    <p>© 2026 SecureBank. All Rights Reserved.</p>
+</footer>
+
+<script>
+function showMessage(message){
+    alert(message);
+}
+
+function submitForm(){
+    let name = document.getElementById('name').value;
+    alert('Thank You ' + name + '! Your form has been submitted successfully.');
+    return false;
+}
+</script>
+
+</body>
+</html>
